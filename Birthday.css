@@ -1095,3 +1095,15 @@ h2 {
         filter: blur(0);
     }
 }
+/* Memories page - allow scrolling on small screens */
+@media (max-width: 700px) {
+    #page3 {
+        overflow-y: auto;
+        overflow-x: hidden;
+        align-items: flex-start;
+    }
+
+    #page3 .content {
+        padding-bottom: 40px;
+    }
+}
