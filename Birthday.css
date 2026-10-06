@@ -762,6 +762,7 @@ h2 {
     }
 }
 
+
 /* =========================
    COZY INTRO — DIDIII GAME
 ========================= */
@@ -947,34 +948,36 @@ h2 {
 }
 
 @keyframes cozyBreathe {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-6px) scale(1.025); }
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-6px) scale(1.025);
+    }
 }
 
 @keyframes cozyFloat {
-    0%, 100% { transform: translateY(0) rotate(-18deg); }
-    50% { transform: translateY(-18px) rotate(-10deg); }
+    0%, 100% {
+        transform: translateY(0) rotate(-18deg);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(-10deg);
+    }
 }
 
 @keyframes softPulse {
-    0%, 100% { box-shadow: 0 10px 30px rgba(216, 91, 131, 0.22); }
-    50% { box-shadow: 0 14px 42px rgba(216, 91, 131, 0.38); }
-}
-
-@media (max-width: 700px) {
-    .gif-wrap {
-        width: 145px;
-        height: 145px;
+    0%, 100% {
+        box-shadow: 0 10px 30px rgba(216, 91, 131, 0.22);
     }
 
-    .cozy-title {
-        font-size: 42px;
-    }
-
-    .love-buttons {
-        height: 175px;
+    50% {
+        box-shadow: 0 14px 42px rgba(216, 91, 131, 0.38);
     }
 }
+
+
 /* =========================
    FINAL LOVE PAGE ANIMATION
 ========================= */
@@ -1038,6 +1041,12 @@ h2 {
         transform: translateY(0);
     }
 }
+
+
+/* =========================
+   FINAL PAGE FLOATING HEARTS
+========================= */
+
 #introPage6::before,
 #introPage6::after {
     content: "♡";
@@ -1061,6 +1070,7 @@ h2 {
 }
 
 @keyframes floatingHeart {
+
     0%, 100% {
         transform: translateY(0) rotate(-8deg);
     }
@@ -1069,11 +1079,12 @@ h2 {
         transform: translateY(-18px) rotate(8deg);
     }
 }
+
+
 /* =========================
    PAGE CHANGE ANIMATION
 ========================= */
 
-/* Soft animation whenever a new page appears */
 .page.active .center-content,
 .page.active .content,
 .page.active .opening-container,
@@ -1083,6 +1094,7 @@ h2 {
 }
 
 @keyframes pageContentEnter {
+
     from {
         opacity: 0;
         transform: translateY(28px) scale(0.97);
@@ -1095,15 +1107,189 @@ h2 {
         filter: blur(0);
     }
 }
-/* Memories page - allow scrolling on small screens */
+
+
+/* =========================================================
+   MOBILE FIXES
+   ONLY FOR PHONES
+========================================================= */
+
 @media (max-width: 700px) {
+
+    /* -----------------------------------------
+       1. MEMORIES PAGE
+       Keep original aesthetic.
+       ONLY allow vertical scrolling.
+    ----------------------------------------- */
+
     #page3 {
         overflow-y: auto;
         overflow-x: hidden;
+
         align-items: flex-start;
+
+        -webkit-overflow-scrolling: touch;
+
+        padding-top: 30px;
+        padding-bottom: 40px;
     }
 
     #page3 .content {
-        padding-bottom: 40px;
+        padding-bottom: 50px;
+    }
+
+
+    /* -----------------------------------------
+       2. LOVE QUESTION PAGES
+       Allow scrolling if content becomes taller
+       than the phone screen.
+    ----------------------------------------- */
+
+    .love-page {
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        align-items: flex-start;
+
+        -webkit-overflow-scrolling: touch;
+
+        padding-top: 25px;
+        padding-bottom: 35px;
+    }
+
+
+    /* -----------------------------------------
+       3. GIF SIZE ON PHONE
+       Keep your existing aesthetic.
+    ----------------------------------------- */
+
+    .gif-wrap {
+        width: 145px;
+        height: 145px;
+        flex-shrink: 0;
+    }
+
+    .cozy-title {
+        font-size: 42px;
+    }
+
+
+    /* -----------------------------------------
+       4. YES / NO MOBILE FIX
+       
+       IMPORTANT:
+       Desktop JS positioning is ignored ONLY
+       on phones.
+
+       Buttons become normal vertical elements,
+       so they can NEVER overlap or leave the
+       screen.
+    ----------------------------------------- */
+
+    .love-buttons {
+        position: relative;
+
+        width: 100%;
+
+        height: auto;
+
+        min-height: 0;
+
+        margin-top: 20px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 16px;
+
+        padding: 5px 0 20px;
+    }
+
+
+    /* Override JS desktop positioning */
+
+    .love-buttons .love-btn {
+        position: relative !important;
+
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+
+        transform: none !important;
+
+        margin: 0 auto;
+
+        flex-shrink: 0;
+
+        max-width: 88vw;
+
+        box-sizing: border-box;
+
+        z-index: 30;
+    }
+
+
+    /* YES */
+
+    .love-buttons .yes-btn {
+        order: 1;
+
+        min-width: 110px !important;
+
+        max-width: 80vw !important;
+
+        padding: 14px 22px !important;
+
+        font-size: 15px !important;
+    }
+
+
+    /* NO */
+
+    .love-buttons .no-btn {
+        order: 2;
+
+        min-width: 130px !important;
+
+        max-width: 88vw !important;
+
+        padding: 15px 24px !important;
+
+        font-size: 15px !important;
+    }
+
+
+    /* -----------------------------------------
+       5. Keep question text comfortable
+    ----------------------------------------- */
+
+    .cozy-content {
+        padding: 15px 12px 20px;
+
+        width: 100%;
+    }
+
+    .cozy-small {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+    }
+
+    .cozy-subtitle {
+        font-size: 14px;
+
+        line-height: 1.7;
+
+        margin-bottom: 12px;
+    }
+
+    .round-note {
+        margin-top: 4px;
+        margin-bottom: 10px;
     }
 }
