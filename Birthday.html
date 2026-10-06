@@ -1,0 +1,434 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Little Surprise ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="Birthday.css">
+</head>
+
+<body>
+
+    <!-- Floating background particles -->
+    <div id="particles"></div>
+
+    <!-- =========================
+         COZY INTRO — DIDIII GAME
+         1 greeting page + 5 separate question pages
+    ========================== -->
+
+    <!-- INTRO 0 — GREETING -->
+    <section class="page cozy-intro active" id="introPage1">
+        <div class="cozy-glow glow-one"></div>
+        <div class="cozy-glow glow-two"></div>
+        <div class="cozy-content">
+            <div class="gif-wrap">
+                <img src="tenor.gif" alt="Cute little boy"
+                     onerror="this.style.display='none'; document.getElementById('gifFallback1').style.display='flex';">
+                <div id="gifFallback1" class="gif-fallback">👦🏻</div>
+            </div>
+            <p class="cozy-small">A tiny question from your betuuu...</p>
+            <h1 class="cozy-title">Didiiiiiiiii... Oooo Didiiiiii... 🥺</h1>
+            <p class="cozy-subtitle">Betuuu has something very important to ask you...</p>
+            <button class="main-btn cozy-next-btn" onclick="startLoveGame()">
+                Yes Betuuu ❤️
+            </button>
+        </div>
+    </section>
+
+    <!-- INTRO 1 — QUESTION 1 -->
+    <section class="page cozy-intro love-page round-page-1" id="introPage2">
+        <div class="cozy-glow glow-one"></div><div class="cozy-glow glow-two"></div>
+        <div class="cozy-content">
+            <div class="gif-wrap">
+                <img src="tenor (1).gif" alt="Cute little boy"
+                     onerror="this.style.display='none'; document.getElementById('gifFallback2').style.display='flex';">
+                <div id="gifFallback2" class="gif-fallback">👦🏻</div>
+            </div>
+            <p class="cozy-small">A very serious question... 🥺</p>
+            <h1 class="cozy-title">Didiii... do youuu loveee meeee? 🥺❤️</h1>
+            <p class="cozy-subtitle">Please answer honestly, Didi... your betuuu is waiting.</p>
+            <div class="love-buttons">
+                <button class="love-btn yes-btn" onclick="chooseYes(1)">Yessss ❤️</button>
+                <button class="love-btn no-btn" onclick="chooseNo(1)">Nooo 😤</button>
+            </div>
+            <p class="round-note" id="roundNote1"></p>
+        </div>
+    </section>
+
+    <!-- INTRO 2 — QUESTION 2 -->
+    <section class="page cozy-intro love-page round-page-2" id="introPage3">
+        <div class="cozy-glow glow-one"></div><div class="cozy-glow glow-two"></div>
+        <div class="cozy-content">
+            <div class="gif-wrap">
+                <img src="tenor (2).gif" alt="Cute little boy"
+                     onerror="this.style.display='none'; document.getElementById('gifFallback3').style.display='flex';">
+                <div id="gifFallback3" class="gif-fallback">👦🏻</div>
+            </div>
+            <p class="cozy-small">Wait wait wait... 😭</p>
+            <h1 class="cozy-title">Are you sureeee, Didiii? 👉👈</h1>
+            <p class="cozy-subtitle">Think carefully before answering your favourite annoying brother.</p>
+            <div class="love-buttons">
+                <button class="love-btn yes-btn" onclick="chooseYes(2)">Yesss ❤️</button>
+                <button class="love-btn no-btn" onclick="chooseNo(2)">Absolutely not 😂</button>
+            </div>
+            <p class="round-note" id="roundNote2"></p>
+        </div>
+    </section>
+
+    <!-- INTRO 3 — QUESTION 3 -->
+    <section class="page cozy-intro love-page round-page-3" id="introPage4">
+        <div class="cozy-glow glow-one"></div><div class="cozy-glow glow-two"></div>
+        <div class="cozy-content">
+            <div class="gif-wrap">
+                <img src="tenor (3).gif" alt="Cute little boy"
+                     onerror="this.style.display='none'; document.getElementById('gifFallback4').style.display='flex';">
+                <div id="gifFallback4" class="gif-fallback">👦🏻</div>
+            </div>
+            <p class="cozy-small">Okay... one more time...</p>
+            <h1 class="cozy-title">But Didiii... you LOVE me naaa? 🥹</h1>
+            <p class="cozy-subtitle">I mean... look at this cute face. How can you say no? 😭</p>
+            <div class="love-buttons">
+                <button class="love-btn yes-btn" onclick="chooseYes(3)">Yes ❤️</button>
+                <button class="love-btn no-btn" onclick="chooseNo(3)">NOPE 😭</button>
+            </div>
+            <p class="round-note" id="roundNote3"></p>
+        </div>
+    </section>
+
+    <!-- INTRO 4 — QUESTION 4 -->
+    <section class="page cozy-intro love-page round-page-4" id="introPage5">
+        <div class="cozy-glow glow-one"></div><div class="cozy-glow glow-two"></div>
+        <div class="cozy-content">
+            <div class="gif-wrap">
+                <img src="tenor (4).gif" alt="Cute little boy"
+                     onerror="this.style.display='none'; document.getElementById('gifFallback5').style.display='flex';">
+                <div id="gifFallback5" class="gif-fallback">👦🏻</div>
+            </div>
+            <p class="cozy-small">Last-last chance... maybe 😌</p>
+            <h1 class="cozy-title">Do you love your betuuu or nottt? 🥺❤️</h1>
+            <p class="cozy-subtitle">This is getting emotionally difficult for me now. 😂</p>
+            <div class="love-buttons">
+                <button class="love-btn yes-btn" onclick="chooseYes(4)">yes 🥺</button>
+                <button class="love-btn no-btn" onclick="chooseNo(4)">Still NO 😂</button>
+            </div>
+            <p class="round-note" id="roundNote4"></p>
+        </div>
+    </section>
+
+    <!-- INTRO 5 — QUESTION 5 -->
+    <section class="page cozy-intro love-page round-page-5" id="introPage6">
+        <div class="cozy-glow glow-one"></div><div class="cozy-glow glow-two"></div>
+        <div class="cozy-content">
+            <div class="gif-wrap">
+                <img src="tenor (6).gif" alt="Cute little boy"
+                     onerror="this.style.display='none'; document.getElementById('gifFallback6').style.display='flex';">
+                <div id="gifFallback6" class="gif-fallback">👦🏻</div>
+            </div>
+            <p class="cozy-small">FINAL QUESTION 🚨</p>
+            <h1 class="cozy-title">Didi... sach sach batao... you love me? 🥹❤️</h1>
+            <p class="cozy-subtitle">Choose wisely. Your betuuu is watching. 👀</p>
+            <div class="love-buttons">
+                <button class="love-btn yes-btn" onclick="chooseYes(5)">yes ❤️</button>
+                <button class="love-btn no-btn" onclick="chooseNo(5)">Neverrr 😭</button>
+            </div>
+            <p class="round-note" id="roundNote5"></p>
+        </div>
+    </section>
+
+    <!-- =========================
+         PAGE 1 — OPENING
+    ========================== -->
+
+    <section class="page" id="page1">
+
+        <div class="opening-container">
+
+            <p class="tiny-text">A little something for you...</p>
+
+            <div class="envelope" id="envelope">
+
+                <div class="envelope-flap"></div>
+
+                <div class="envelope-body">
+                    <span>💌</span>
+                </div>
+
+            </div>
+
+            <h1>Someone has a surprise for you...</h1>
+
+            <p class="subtitle">
+                But first, you have to open it.
+            </p>
+
+            <button class="main-btn" onclick="openEnvelope()">
+                Open my surprise ✨
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PAGE 2 — BIRTHDAY REVEAL
+    ========================== -->
+
+    <section class="page" id="page2">
+
+        <div class="center-content">
+
+            <p class="eyebrow">Today is a little more special...</p>
+
+            <h1 class="big-title">
+                Happy Birthday
+                <span>My Dear Sister ❤️</span>
+            </h1>
+
+            <p class="birthday-text">
+                Today isn't just another day.
+                It's the day the world got a little brighter
+                because you came into it.
+            </p>
+
+            <div class="heart-big">♡</div>
+
+            <button class="main-btn" onclick="nextPage(3)">
+                There's more... →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PAGE 3 — MEMORIES
+    ========================== -->
+
+    <section class="page" id="page3">
+
+        <div class="content">
+
+            <p class="eyebrow">A few little memories...</p>
+
+            <h2>Moments worth remembering 📸</h2>
+
+            <p class="section-description">
+                Some moments are ordinary when they happen,
+                but become priceless when we look back.
+            </p>
+
+            <div class="photos">
+
+                <div class="photo-card card-one">
+                    <img src="images/photo1.jpg" alt="Memory 1">
+                    <p>One of those moments ❤️</p>
+                </div>
+
+                <div class="photo-card card-two">
+                    <img src="images/photo2.jpg" alt="Memory 2">
+                    <p>And another beautiful memory ✨</p>
+                </div>
+
+                <div class="photo-card card-three">
+                    <img src="images/photo3.jpg" alt="Memory 3">
+                    <p>Here's to many more 🫶</p>
+                </div>
+
+            </div>
+
+            <button class="main-btn" onclick="nextPage(4)">
+                Continue →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PAGE 4 — FLIP CARDS
+    ========================== -->
+
+    <section class="page" id="page4">
+
+        <div class="content">
+
+            <p class="eyebrow">A few things I want you to know...</p>
+
+            <h2>Because you're pretty special 💗</h2>
+
+            <div class="flip-container">
+
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-front">
+                        <span>🌸</span>
+                        <h3>You're kind</h3>
+                        <p>Tap to see why...</p>
+                    </div>
+
+                    <div class="flip-back">
+                        <p>
+                            You have a way of making people
+                            feel comfortable and loved.
+                            Never lose that.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-front">
+                        <span>✨</span>
+                        <h3>You're strong</h3>
+                        <p>Tap to see why...</p>
+                    </div>
+
+                    <div class="flip-back">
+                        <p>
+                            You've handled so many things
+                            and still manage to keep going.
+                            I'm proud of you.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-front">
+                        <span>❤️</span>
+                        <h3>You're loved</h3>
+                        <p>Tap to see why...</p>
+                    </div>
+
+                    <div class="flip-back">
+                        <p>
+                            More than you probably realize.
+                            And yes, that includes your annoying
+                            little brother. 😂
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="main-btn" onclick="nextPage(5)">
+                One last surprise 🎁
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PAGE 5 — CAKE
+    ========================== -->
+
+    <section class="page" id="page5">
+
+        <div class="center-content">
+
+            <p class="eyebrow">Okay... make a wish 🎂</p>
+
+            <h2>It's cake time!</h2>
+
+            <p class="section-description">
+                Click the candles to blow them out.
+            </p>
+
+            <div class="cake-area">
+
+                <div class="candles">
+
+                    <div class="candle" onclick="blowCandle(this)">
+                        <div class="flame"></div>
+                    </div>
+
+                    <div class="candle" onclick="blowCandle(this)">
+                        <div class="flame"></div>
+                    </div>
+
+                    <div class="candle" onclick="blowCandle(this)">
+                        <div class="flame"></div>
+                    </div>
+
+                </div>
+
+                <div class="cake">
+                    <div class="icing"></div>
+                    <div class="cake-layer"></div>
+                    <div class="cake-bottom"></div>
+                </div>
+
+            </div>
+
+            <p id="wish-message" class="wish-message">
+                Make a wish... ✨
+            </p>
+
+            <button class="main-btn hidden" id="final-button" onclick="nextPage(6)">
+                Open your final message 💌
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PAGE 6 — FINAL LETTER
+    ========================== -->
+
+    <section class="page" id="page6">
+
+        <div class="letter">
+
+            <div class="letter-decoration">♡</div>
+
+            <p class="eyebrow">For you, always.</p>
+
+            <h2>A little letter...</h2>
+
+            <div id="letter-text" class="letter-text"></div>
+
+            <div class="signature">
+                With lots of love,<br>
+                <strong>Your annoying brother ❤️</strong>
+            </div>
+
+            <div class="final-message">
+                Happy Birthday! 🎂✨
+            </div>
+
+            <button class="restart-btn" onclick="restart()">
+                ↻ Experience it again
+            </button>
+
+        </div>
+
+    </section>
+
+    <audio id="song1" preload="auto">
+    <source src="pretty little baby.m4a" type="audio/mp4">
+</audio>
+
+<audio id="song2" preload="auto">
+    <source src="Tu-hain-toh.m4a" type="audio/mp4">
+</audio>
+
+<script src="Birthday.js"></script>
+
+</body>
+</html>
+```
